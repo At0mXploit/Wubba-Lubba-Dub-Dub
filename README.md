@@ -122,6 +122,22 @@ Or to run everything at once:
 task apply-all
 ```
 
+```bash
+➜  applcation-deploy git:(main) ✗ kubectl get pods -n demo-app
+NAME                                     READY   STATUS              RESTARTS      AGE
+api-golang-687595bcc-thhj4               0/1     ContainerCreating   0             2m41s
+api-node-66ccb654bd-h2sdr                0/1     ContainerCreating   0             2m40s
+client-react-nginx-5f7bc48ccc-mgxvp      0/1     ContainerCreating   0             2m39s
+db-migrator-4vlck                        0/1     CrashLoopBackOff    4 (15s ago)   2m46s
+load-generator-python-64bbfcbc4b-26p7h   0/1     ContainerCreating   0             6s
+
+➜  applcation-deploy git:(main) ✗ kubectl get svc -n demo-app
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+api-golang           ClusterIP   10.96.180.153   <none>        8000/TCP   3m10s
+api-node             ClusterIP   10.96.113.140   <none>        3000/TCP   3m9s
+client-react-nginx   ClusterIP   10.96.154.180   <none>        8080/TCP   3m8s
+```
+
 ## Testing
 
 ### Check Pods
