@@ -17,7 +17,6 @@ React Frontend --> Node API / Go API --> PostgreSQL
 .
 ├── applcation-deploy/ # Kubernetes manifests & Taskfiles
 ├── demo-application/ # Source code for APIs, React frontend, load generator
-├── Taskfile.yaml # Top-level task runner for deployment
 ```
 
 - React frontend queries APIs and displays data.
